@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META INFO -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- META VIEW PORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+    <title>Vuframe Robot 3D Configurator & WebAR</title>
+    <meta name="description" content="Vuframe Robot Configurator – 3D & WebAR">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="https://webar.vuframe.com/assets/models/robot-configurator.jpg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- WEB FONT-FAMILY -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+    <!-- VENDOR FONT ICONS CSS -->
+    <link rel="stylesheet" href="fonticons/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="fonticons/et-line/et-line-font.css">
+    <link rel="stylesheet" href="fonticons/material-webfont/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="fonticons/pixeden/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="fonticons/simplelineicons/css/simple-line-icons.css">
+
+    <!-- COMMON VENDOR CSS -->
+    <link rel="stylesheet" href="vendor/animate-css/animate.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/sweetalert/sweetalert2.min.css">
+    <link rel="stylesheet" href="vendor/jarallax/jarallax.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
+
+    <!-- PAGE SPECIFIC VENDOR CSS -->
+    <link rel="stylesheet" href="vendor/vegas/vegas.min.css">
+
+    <!-- TEMPLATE COMMON CSS -->
+    <link rel="stylesheet" href="css/ckav-main.css">
+    <link rel="stylesheet" href="css/ckav-elements.css">
+    <link rel="stylesheet" href="css/ckav-helper.css">
+    <link rel="stylesheet" href="css/ckav-responsive.css">
+
+    <!-- TEMPLATE USER CUSTOM CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/template-custom.css">
+
+    <style>
+
+        a.ar-link {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 40px;
+            bottom: 40px;
+            width: 75px;
+            height: 75px;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bolder;
+            box-shadow: rgba(11, 11, 11, 0.22) 0px 6px 10px;
+            margin: auto;
+            left: 20px;
+            top: 0px;
+            bottom: 0px;
+            border: 1px solid white;
+        }
+
+        a, button, .more-link, .more-link *, .hover-box * {
+            transition: unset;
+        }
+
+        a.ar-link:hover {
+            border: white;
+            color: darkgray;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 480px) {
+            a.ar-link {
+                top: unset;
+                bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="ckav-body tooltip-light" style="background:#343947">
+
+<div id="loading-screen" style="position: absolute; top:0px; bottom:0px; left:0px; right:0px; z-index:9999; background: white; width:100%; height:100vh; display: flex; justify-content: center; align-items: center; flex-direction: column">
+    <img style="width: 160px; display: block;" src="assets/models/smartVu-logo.png" />
+    <br />
+    <b>is loading <b class="blink_effect">...</b></b>
+</div>
+
+<div class="sidebar-container">
+    <i class="pe-7s-close close-sidebar desktop"></i>
+    <div class="sidebar" style="display: none">
+        <i class="pe-7s-close close-sidebar"></i>
+        <h2>Vuframe Robot </h2>
+        <span style="margin:-10px 15px;color:#cacaca">Configurator</span>
+        <div class="sidebar-section">
+            <section>
+                <h3>
+                    <i class="fas fa-palette"></i>
+                    Color Selection
+                </h3>
+                <hr/>
+                <div>
+                    <fieldset>
+                        <input onclick="colorSelection('red')" checked type="radio" id="robot-red" name="color-configurator" value="red">
+                        <label for="robot-red">Red</label>
+                        <br />
+                        <input onclick="colorSelection('orange')" type="radio" id="robot-orange" name="color-configurator" value="orange">
+                        <label for="robot-orange"> Orange</label>
+                        <br />
+                        <input onclick="colorSelection('chrome')" type="radio" id="robot-chrome" name="color-configurator" value="chrome">
+                        <label for="robot-chrome"> Chrome</label>
+                    </fieldset>
+                </div>
+
+            </section>
+            <section>
+                <h3>
+                    <i class="fas fa-ethernet"></i>
+                    Gripper Selection
+                </h3>
+                <hr/>
+                <div>
+                    <fieldset>
+                        <input onclick="gripperSelection('gripper-1')" checked type="radio" id="gripper-1" name="gripper-configurator" value="red">
+                        <label for="gripper-1">Gripper 1</label>
+                        <br />
+                        <input onclick="gripperSelection('gripper-2')" type="radio" id="gripper-2" name="gripper-configurator" value="orange">
+                        <label for="gripper-2">Gripper 2</label>
+                        <br />
+                        <input onclick="gripperSelection('gripper-3')" type="radio" id="gripper-3" name="gripper-configurator" value="chrome">
+                        <label for="gripper-3">Gripper 3</label>
+                    </fieldset>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<img src="assets/models/2ed32c7d-logo.png" class="logo-header" style="width: 120px;">
+
+<div id="webar-container" class="webar">
+    <div class="webar-preview">
+        <a id="smartvu-link-arkit" href="https://hma-2021-vuframe.vercel.app/assets/models/robot-configurator.usdz#custom=https://hma-2021-vuframe.vercel.app/assets/models/f7ec7677.html&customHeight=medium&allowsContentScaling=1&canonicalWebPageURL=https://share.vuframe.com/2ed32c7d" rel="ar">
+            <img src="assets/models/vuframe-robot-2021.jpg" class="radius-10 responsive webar-img">
+            <span id="arcore-button" class="arcore-button">View in AR</span>
+        </a>
+    </div>
+</div>
+
+<div id="requirements" class="popup-section services-section flex-cc current-popup">
+    <div class="inner-wrapper" data-ckav-smd="align-center">
+
+        <!-- CLOSE BUTTON -->
+        <div class="popup-close button button-icon color-button-dark solid color-hov-button-dark">
+            <i class="pe-7s-close"></i>
+        </div>
+
+        <!-- POPUP CONTENT -->
+        <div class="content-area">
+            <div class="width-100 align-center margin-auto margin-b-10">
+                <h3 class="heading-content bold-600">Zuhause ausprobieren</h3>
+                <p class="heading-content-sub bold-400 tiny margin-b-30">Dank Augmented Reality (WebAR) kommt dieses Produkt zu Ihnen nach Hause:</p>
+            </div>
+            <div class="row gt30 justify-content-center flex">
+                <div class="col-lg-6 text-center align-self-center" data-ckav-smd="margin-b-30">
+                    <img style="width:100%" src="assets/models/2ed32c7d-ar.jpg">
+                </div>
+                <div class="col-lg-6" data-ckav-smd="margin-b-30">
+                    <div class="info-obj radius-10 margin-b-0 center info-box-01 img-t padding-30 gap-20 mini" data-bg-color="rgba(0,0,0,0.03)">
+                        <div class="info">
+                            <h3 class="heading-content bold-600 tiny">Einfach QR Code scannen</h3>
+                            <img src="assets/models/robot-configurator-qr.png" class="img-fluid">
+                            <p class="margin-b-0 margin-t-10">
+                                <i class="fab fa-2x fa-apple"></i>
+                                <i class="fab fa-2x fa-android"></i>
+                                <br>
+                                Funktioniert mit Android und Apple iOS Tablets & Smartphones
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<a href="#" class="ar-link navigation-link" id="ar-popup-link" style="background: #242836">AR&nbsp;&nbsp;<i class="fa fa-camera"></i></a>
+
+<i class="fas fa-filter open-filter"></i>
+
+<!-- COMMON VENDOR SCRIPTS -->
+<script src="vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="vendor/jquery/jquery-migrate-3.0.0.min.js"></script>
+<script src="vendor/popper/umd/popper.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="vendor/sweetalert/sweetalert2.min.js"></script>
+<script src="vendor/jarallax/jarallax.min.js"></script>
+<script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+<script src="vendor/swiper/js/swiper.min.js"></script>
+<script src="vendor/jQuery-viewport-checker/jquery.viewportchecker.min.js"></script>
+<script src="vendor/enquire/enquire.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="vendor/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="vendor/isotope/isotope.pkgd.min.js"></script>
+<script src="vendor/isotope/packery-mode.pkgd.min.js"></script>
+<script src="vendor/howler/howler.min.js"></script>
+
+<!-- PAGE SPECIFIC VENDOR SCRIPTS -->
+<script src="vendor/vegas/vegas.min.js"></script>
+
+<!-- TEMPLATE COMMON SCRIPTS -->
+<script src="assets/models/robot-configurator.js"></script>
+<script src="js/ckav-main.js"></script>
+
+</body>
+</html>

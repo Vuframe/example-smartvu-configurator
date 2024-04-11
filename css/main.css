@@ -1,0 +1,313 @@
+body, html {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.bg-image {
+  background-image: url("../images/preview.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #435168;
+  height: 100%;
+}
+
+.main-menu {
+  position: fixed;
+}
+
+.main-menu-nav {
+  position: fixed;
+  top: 10px;
+  right: 1%;
+  padding: 0px;
+
+}
+
+.timer {
+  font-size: 2rem;
+}
+
+.countdown .content {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: rgba(0,0,0,0.25) 0px 20px 30px;
+  text-align: center;
+  vertical-align: middle;
+}
+.countdown .content-wrapper
+{
+  padding: 20px;
+}
+.countdown {
+  height: 50vh;
+  width: 50vw;
+  min-height: 400px;
+  min-width: 600px;
+  max-height: 400px;
+  max-width: 600px;
+  position: absolute;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 300px);
+}
+
+.smartvu {
+  position: fixed;
+}
+.smartvu, .smartvu {
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  width:100%;
+  height:100%;
+  border:none;
+  margin:0;
+  padding:0;
+}
+.smartvu {
+  border-radius: 20px;
+  position: absolute;
+}
+
+.centered {
+  text-align: center;
+}
+
+.m-t {
+  margin-top: 20px;
+}
+
+.p-t {
+  padding-top: 20px;
+}
+
+.main-menu-nav a {
+  float: left;
+  text-align: center;
+  padding: 8px;
+  color: black;
+  font-size: 1.1rem;
+}
+
+.logo-header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 64px;
+  z-index: 9999;
+  width:260px;
+  height:auto;
+}
+
+.logo {
+  height: 64px;
+}
+
+.low-menu-nav {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.low-menu-nav .copyright {
+  font-size: 80%;
+  opacity: 0.5;
+}
+
+.low-menu-nav .links {
+  position: absolute;
+  left: 10px;
+}
+
+.low-menu-nav a {
+  text-align: center;
+  color: white;
+  margin: 0rem 0.25rem;
+  text-decoration: none;
+}
+
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  right: 0%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 18px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.calendar {
+  background: #ff5252;
+  color: white;
+}
+
+.mail {
+  background: #808080;
+  color: white;
+}
+
+.share {
+  background: #435168;
+  color: white;
+}
+
+a.ar-link:hover {
+  color: blue;
+  background-color: white;
+  border: blue 2px solid;
+}
+.ar-link {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: blue;
+  color: white;
+  font-weight: bolder;
+  box-shadow: rgba(11, 11, 11, 0.22) 0px 6px 10px;
+}
+
+.ueberschrift {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  right: 10px;
+  padding: 0px;
+  
+  
+}
+
+h1 {
+  text-align: center;
+  padding: 8px;
+  color: black;
+  font-weight: 900;
+  font-size: 1.5rem;
+  
+}
+
+.produktbeschreibung {
+  position: absolute;
+  background-color: white;
+  text-align: left;
+  width: 21vw;
+  height: 300px;
+  bottom: 30px;
+  left: 30px;
+  padding: 1rem;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  box-shadow: 10px 5px 30px grey;
+}
+
+.produktbeschreibung h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.produktbeschreibung label {
+  font-weight: 550;
+}
+
+.btn {
+  background-color: #ff5252;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.amazon {
+  font-size: 0.7rem;
+}
+
+.link, .link a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.75;
+}
+.link > a:hover {
+  opacity: 100%;
+}
+.help, .help a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.5;
+}
+.help a:hover {
+  opacity: 100%;
+  color: white !important;
+}
+
+
+.version-number {
+  font-size: 7pt;
+  font-weight: bold;
+  opacity: 0.5;
+  color: white;
+  position: fixed;
+  right: 3px;
+  bottom: 1px;
+  z-index: 99;
+}
+.powered-by-vuframe {
+  opacity: 0.5;
+  height: 16px;
+  color: white;
+  position: fixed;
+  left: 5px;
+  bottom: 5px;
+  z-index: 99;
+}
+
+@media only screen and (max-width : 650px) {
+
+  .logo {
+    max-height: 32px;
+  }
+
+  .countdown {
+    height: 50vh;
+    width: 50vw;
+    min-height: 400px;
+    min-width: 360px;
+    max-width: 360px;
+    position: absolute;
+
+    left: calc(50vw - 180px);
+  }
+
+  .low-menu-nav {
+    font-size: 0.5rem;
+  }
+
+  .low-menu-nav .copyright {
+    display: none;
+  }
+
+}

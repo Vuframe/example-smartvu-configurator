@@ -7,15 +7,15 @@ We're using vanilla JS with some jQuery for simplicity.
 
 The core logic is implemented in `robot-configurator.js`.
 
-![Preview](docs/preview.png)
+![Preview](docs/preview.jpg)
 
 Try it out:
 
-https://vuframe.github.io/example-smartvu-configurator/
+https://example-smartvu-configurator.vercel.app/
 
 ## Docs
 
-https://vuframe.com/docs/platform/smartvu/iframe#embed-api
+https://docs.vuframe.com/studio/smartvu/iframe#embed-api
 
 ## Contact
 
